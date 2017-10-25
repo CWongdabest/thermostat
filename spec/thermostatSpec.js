@@ -31,6 +31,27 @@ describe("Thermostat settings", function() {
     expect(function(){thermostat.increase();}).toThrow(new Error("Maximum temperature is reached"));
   });
 
+  it("has a reset function which resets the temperature to 20", function(){
+    thermostat.decrease();
+    thermostat.resetTemperature();
+    expect(thermostat.temperature()).toEqual(20);
+  });
+
+  it("States the energy usage according to the temperature", function(){
+    for (i = 1; i <= 3; i++){
+    thermostat.decrease();}
+    expect(thermostat.energyUsage()).toEqual("low-usage");
+  });
+
+  it("States the energy usage according to the temperature", function(){
+    expect(thermostat.energyUsage()).toEqual("medium-usage");
+  });
+
+  it("States the energy usage according to the temperature", function(){
+    for (i = 1; i <= 5; i++){
+    thermostat.increase();}
+    expect(thermostat.energyUsage()).toEqual("high-usage");
+  });
 
 
  describe('changed power saving mode', function() {
@@ -52,11 +73,5 @@ describe("Thermostat settings", function() {
     thermostat.changePowerSavingMode();
     expect(thermostat.powerSaving()).toEqual(true);
   });
-
-
 });
-
-
-
-
 });
