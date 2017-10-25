@@ -25,4 +25,38 @@ describe("Thermostat settings", function() {
     expect(function(){thermostat.decrease();}).toThrow(new Error("Minimum temperature is 10 degrees"));
   });
 
+  it("it throws an error if tries to add temperature beyound maximum temperature", function(){
+    for (i = 1; i <= 5; i++){
+    thermostat.increase();}
+    expect(function(){thermostat.increase();}).toThrow(new Error("Maximum temperature is reached"));
+  });
+
+
+
+ describe('changed power saving mode', function() {
+
+   beforeEach(function() {
+     thermostat = new Thermostat();
+     thermostat.changePowerSavingMode();
+   });
+
+   it('has a power saving mode that could be changed', function(){
+     expect(thermostat.powerSaving()).toEqual(false);
+   });
+
+   it('changes maximum temperature based on power saving mode', function(){
+     expect(thermostat.maximumTemperature()).toEqual(35);
+   });
+
+  it('has a power saving mode that could be changed', function(){
+    thermostat.changePowerSavingMode();
+    expect(thermostat.powerSaving()).toEqual(true);
+  });
+
+
+});
+
+
+
+
 });
