@@ -1,5 +1,7 @@
-function Thermostat() {
+
+const minimiumTemperature = 10;
 const defaultTemperature = 20;
+function Thermostat() {
 this._temperature = defaultTemperature;
 }
 
@@ -12,5 +14,7 @@ Thermostat.prototype.increase = function() {
 };
 
 Thermostat.prototype.decrease = function() {
+if (this._temperature <= minimiumTemperature)
+throw new Error("Minimum temperature is 10 degrees")
   this._temperature -= 1;
 };
