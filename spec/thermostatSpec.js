@@ -8,4 +8,10 @@ describe("Thermostat settings", function() {
   it('The thermostat is initialised with a temperature of 20', function(){
     expect(thermostat.temperature()).toEqual(20);
   });
+
+  it("The thermostat's temperature could be increased", function(){
+    thermostat.increase(5);
+    expect(thermostat.temperature()).toEqual(25);
+  });
+
 });
