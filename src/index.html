@@ -2,18 +2,20 @@
 <html>
 <head>
   <title>Thermostat</title>
+    <link rel="stylesheet" type='text/css' href="Public/thermostat_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>
 <body>
 <h1>Thermostat</h1>
 
-<h2>20°C</h2>
+<h2><span class="Celcius">20°C</span></h2>
 <h3><label>maxtemp:</label> 25°C <label>mintemp:</label>25°C </h3>
 
 <div>
 <form>
-<input type ='submit' name = 'thermostat_button' value ='+' class='button'><input type ='submit' name = 'thermostat_button' value ='-' class='button'>
+<span class='button'><input type ='submit' name = 'thermostat_button' value ='+'></span><span class='button'><input type ='submit' name = 'thermostat_button' value ='-'></span>
 <br></br>
-<label>Powersave mode<input type ='checkbox' name = 'thermostat_button'><span class='slider round'></span></label>
+<label>Powersave mode</label><label class="switch"><input type ='checkbox' name = 'thermostat_button'><span class='slider round'></span></label>
 <br></br>
 <input type ='submit' name = 'thermostat_button' value ='Reset' class='button2'>
 </form>
