@@ -1,9 +1,8 @@
 
-const minimiumTemperature = 10;
-const defaultTemperature = 20;
-
 function Thermostat() {
-  this._temperature = defaultTemperature;
+  this.MINIMUMTEMPERATURE = 10;
+  this.DEFAULTTEMPERATURE = 20;
+  this._temperature = this.DEFAULTTEMPERATURE;
   this._powerSaving = true;
 }
 
@@ -18,7 +17,7 @@ Thermostat.prototype.increase = function() {
  };
 
 Thermostat.prototype.decrease = function() {
-if (this._temperature <= minimiumTemperature)
+if (this._temperature <= this.MINIMUMTEMPERATURE)
   throw new Error("Minimum temperature is 10 degrees");
   this._temperature -= 1;
 };
@@ -38,7 +37,7 @@ Thermostat.prototype.maximumTemperature = function() {
 };
 
 Thermostat.prototype.resetTemperature = function() {
-  this._temperature = defaultTemperature;
+  this._temperature = this.DEFAULTTEMPERATURE;
 };
 
 Thermostat.prototype.energyUsage = function() {

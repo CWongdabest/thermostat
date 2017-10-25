@@ -38,13 +38,13 @@ describe("Thermostat settings", function() {
   });
 
   it("States the energy usage according to the temperature", function(){
-    for (i = 1; i <= 3; i++){
-    thermostat.decrease();}
-    expect(thermostat.energyUsage()).toEqual("low-usage");
+    expect(thermostat.energyUsage()).toEqual("medium-usage");
   });
 
   it("States the energy usage according to the temperature", function(){
-    expect(thermostat.energyUsage()).toEqual("medium-usage");
+    for (i = 1; i <= 3; i++){
+    thermostat.decrease();}
+    expect(thermostat.energyUsage()).toEqual("low-usage");
   });
 
   it("States the energy usage according to the temperature", function(){
