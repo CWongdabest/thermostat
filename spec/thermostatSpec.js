@@ -10,13 +10,13 @@ describe("Thermostat settings", function() {
   });
 
   it("The thermostat's temperature could be increased", function(){
-    thermostat.increase(5);
-    expect(thermostat.temperature()).toEqual(25);
+    thermostat.increase();
+    expect(thermostat.temperature()).toEqual(21);
   });
 
   it("The thermostat's temperature could be decreased", function(){
-    thermostat.decrease(5);
-    expect(thermostat.temperature()).toEqual(15);
+    thermostat.decrease();
+    expect(thermostat.temperature()).toEqual(19);
   });
 
 });
