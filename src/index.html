@@ -6,22 +6,30 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>
 <body>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<script type ="text/javascript">
+  $("document").ready(function() {
+    //console.log('hello')
+    $("#thermostat_button").click(function(){ $("div").animate({left: '250px'});
+      });
+    });
+</script>
+
+
 <h1>Thermostat</h1>
 
 <h2><span class="Celcius">20°C</span></h2>
-<h3><label class="maxtemp"> maxtemp:25°C </label><label class="mintemp">mintemp: 10°C </h3>
+<h3><label class="maxtemp"> maxtemp: 25°C </label><label class="mintemp">mintemp: 10°C </h3>
 
 <div>
-<form>
-<span class='button'><input type ='submit' name = 'thermostat_button' value ='+'></span><span class='button'><input type ='submit' name = 'thermostat_button' value ='-'></span>
+<label class= 'button1'><button id='thermostat_button'>+</button></label><label><button id='thermostat_button'>-</button></label>
 <br></br>
-<label class='psbutton'> Powersave mode</label><label class="switch"><input type ='checkbox' name = 'thermostat_button'><span class='slider round'></span></label>
+<label class='psbutton'> Powersave mode</label><label class="switch"><input type ='checkbox' class = 'thermostat_button'><span class='slider round'></span></label>
 <br></br>
-<input type ='submit' name = 'thermostat_button' value ='Reset' class='button2'>
-</form>
+<button id='reset'>Reset</button>
 </div>
 
-<div>
 <p class="energyUsage">Energy usage: medium</p>
 </div>
 </body>

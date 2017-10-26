@@ -24,21 +24,28 @@ h3 {
 
 }
 
+div {
+  text-align: center;
+}
 .maxtemp {
   padding: 60px
 }
 
-.button
+#thermostat_button
 {
-  width: 250px
+  width: 50px;
   color: grey;
-  font-size: 50px;
-  padding: 40px 60px;
-  /*text-align: center;*/
+  font-size: 40px;
+  padding: 30px 30px 30px 30px;
+  text-align: center;
   font-family: 'Roboto Slab', serif;
 
 }
 
+.button1 {
+  padding: 40px 60px;
+
+}
 .psbutton {
 
   width: 250px
